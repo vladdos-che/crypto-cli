@@ -1,18 +1,23 @@
-let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5";
+const apiUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5";
 
 (async () => {
     try {
-        let response = await fetch(url);
+        const response = await fetch(apiUrl);
 
         if (response.ok) {
-            let json = await response.json();
-            console.log(json);
+            const json = await response.json();
 
-            for (let i = 0; i < json.length; i++) {
-                console.log(`Rank: ${json[i].market_cap_rank}, name: ${json[i].name}, price: ${json[i].current_price} $`)
-            }
+            const formatedJson = json.map((item) => {
+                return {
+                    Rank: item.market_cap_rank,
+                    name: item.name,
+                    price: `${item.current_price} $`
+                }
+            });
+
+            console.table(formatedJson);
         } else {
-            console.log(response.status);
+            console.log(`Ошибочка! Статус код: ${response.status}`);
         }
     } catch (error) {
         console.log(error);
