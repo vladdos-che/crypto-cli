@@ -1,15 +1,15 @@
 # Crypto CLI Tool 🚀
 
-Простая консольная утилита на Node.js, которая получает актуальные курсы топ-5 криптовалют с CoinGecko API.
+A simple command-line utility built with Node.js that fetches real-time prices for the top 5 cryptocurrencies using the CoinGecko API.
 
-## 📋 Особенности
-- Получает данные в реальном времени.
-- Форматирует вывод в красивую таблицу (Rank, Name, Price).
-- Использует нативный `fetch` (без лишних зависимостей).
+## 📋 Features
+- Fetches real-time market data.
+- Formats output into a clean table (Rank, Name, Price).
+- Lightweight: uses native `fetch` API.
 
-## 🛠 Установка и запуск
+## 🛠 Installation & Usage
 
-1. **Клонируйте репозиторий:**
+1. **Clone the repository:**
    ```bash
    git clone [https://github.com/vladdos-che/crypto-cli.git](https://github.com/vladdos-che/crypto-cli.git)
    cd crypto-cli
